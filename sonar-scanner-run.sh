@@ -24,6 +24,10 @@
     COMMAND="$COMMAND -Dsonar.projectKey=\"$SONAR_PROJECT_KEY\""
   fi
 
+  if [ ! -z "$SONAR_JAVA_BINARIES" ]; then
+    COMMAND="$COMMAND -Dsonar.java.binaries=\"$SONAR_JAVA_BINARIES\""
+  fi
+
   if [ ! -z "$SONAR_TOKEN" ]; then
     COMMAND="$COMMAND -Dsonar.login=\"$SONAR_TOKEN\""
   fi
